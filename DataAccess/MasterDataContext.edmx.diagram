@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b4517549672341dc8f10f881eadd0870" Name="Diagram1" ZoomLevel="58" >
+        <EntityTypeShape EntityType="Api.DAL.Tenant" Width="1.5" PointX="8.25" PointY="77.875" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationType" Width="1.5" PointX="5.25" PointY="60.375" />
+        <EntityTypeShape EntityType="Api.DAL.CollectionCode" Width="1.5" PointX="5.25" PointY="74.375" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationUnit" Width="1.875" PointX="10.5" PointY="67.875" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnits_CollectionCodes" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnits_OrganizationTypes" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnits_Tenants" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationGroup" Width="1.5" PointX="5.25" PointY="70.125" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnits_OrganizationGroups" />
+        <EntityTypeShape EntityType="Api.DAL.HierarchyType" Width="1.5" PointX="5.25" PointY="82.5" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnits_HierarchyTypes" />
+        <EntityTypeShape EntityType="Api.DAL.Address" Width="1.5" PointX="8.25" PointY="73.5" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnits_Addresses" />
+        <EntityTypeShape EntityType="Api.DAL.PostOfficeBox" Width="1.5" PointX="8.25" PointY="81.625" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnits_PostOfficeBox" />
+        <EntityTypeShape EntityType="Api.DAL.LocalizableEntry" Width="1.5" PointX="3" PointY="80.625" />
+        <AssociationConnector Association="Api.DAL.FK_CollectionCodes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_HierarchyTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationGroups_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationTypes_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.LocalizableType" Width="1.5" PointX="0.75" PointY="82.375" />
+        <EntityTypeShape EntityType="Api.DAL.LocalizedEntry" Width="1.5" PointX="5.25" PointY="78.625" />
+        <AssociationConnector Association="Api.DAL.FK_LocalizableEntries_LocalizableTypes" />
+        <AssociationConnector Association="Api.DAL.FK_LocalizedEntries_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.Agent" Width="1.5" PointX="13.125" PointY="66.375" />
+        <EntityTypeShape EntityType="Api.DAL.Client" Width="1.75" PointX="13.125" PointY="84.25" />
+        <EntityTypeShape EntityType="Api.DAL.Mandate" Width="1.5" PointX="15.375" PointY="82.5" />
+        <EntityTypeShape EntityType="Api.DAL.Partner" Width="1.5" PointX="13.125" PointY="62.75" />
+        <EntityTypeShape EntityType="Api.DAL.Repairer" Width="1.5" PointX="13.125" PointY="69.75" />
+        <EntityTypeShape EntityType="Api.DAL.Supplier" Width="1.5" PointX="15.375" PointY="72" />
+        <AssociationConnector Association="Api.DAL.FK_Agents_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Clients_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Mandates_Clients" />
+        <AssociationConnector Association="Api.DAL.FK_Partners_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Repairers_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Suppliers_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Suppliers_Partners" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationHierarchy" Width="1.5" PointX="13.125" PointY="105.625" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationHierarchy_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationHierarchy_ParentOrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.TaxType" Width="1.5" PointX="5.25" PointY="86.75" />
+        <AssociationConnector Association="Api.DAL.FK_TaxTypes_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.TaxCode" Width="1.5" PointX="7.5" PointY="87.125" />
+        <AssociationConnector Association="Api.DAL.FK_TaxCodes_TaxTypes" />
+        <EntityTypeShape EntityType="Api.DAL.Product" Width="1.5" PointX="20.125" PointY="78.75" />
+        <AssociationConnector Association="Api.DAL.FK_Products_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.ProductGroup" Width="1.5" PointX="5.25" PointY="90.875" />
+        <AssociationConnector Association="Api.DAL.FK_ProductGroups_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_Products_ProductGroups" />
+        <EntityTypeShape EntityType="Api.DAL.DamageReason" Width="1.5" PointX="5.25" PointY="95.125" />
+        <AssociationConnector Association="Api.DAL.FK_DamageReasons_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.BankAccount" Width="1.5" PointX="10.625" PointY="80" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationAccount" Width="1.5" PointX="13.125" PointY="73.5" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationAccounts_BankAccounts" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationAccounts_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Products_Departments" />
+        <EntityTypeShape EntityType="Api.DAL.HandlingCountry" Width="1.5" PointX="24.875" PointY="84.625" />
+        <EntityTypeShape EntityType="Api.DAL.HandlingType" Width="1.5" PointX="5.25" PointY="100" />
+        <EntityTypeShape EntityType="Api.DAL.MainContract" Width="1.5" PointX="15.375" PointY="85.875" />
+        <EntityTypeShape EntityType="Api.DAL.SubContract" Width="1.5" PointX="17.625" PointY="76.25" />
+        <AssociationConnector Association="Api.DAL.FK_MainContract_Clients" />
+        <AssociationConnector Association="Api.DAL.FK_HandlingCountries_Departments" />
+        <AssociationConnector Association="Api.DAL.FK_HandlingCountries_HandlingTypes" />
+        <AssociationConnector Association="Api.DAL.FK_HandlingCountries_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_HandlingCountries_Partners" />
+        <AssociationConnector Association="Api.DAL.FK_HandlingCountries_SubContract" />
+        <AssociationConnector Association="Api.DAL.FK_HandlingTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_SubContract_MainContract" />
+        <AssociationConnector Association="Api.DAL.FK_SubContract_Departments" />
+        <AssociationConnector Association="Api.DAL.FK_SubContract_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_SubContract_Products" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationCode" Width="2.25" PointX="18.125" PointY="88.125" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationCodes_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationCodeType" Width="1.5" PointX="5.25" PointY="104.25" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationCodeTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationCodes_OrganizationCodeTypes" />
+        <EntityTypeShape EntityType="Api.DAL.ContactPersonType" Width="1.5" PointX="5.25" PointY="108.5" />
+        <AssociationConnector Association="Api.DAL.FK_ContactPersonTypes_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.ContactPerson" Width="1.5" PointX="13.125" PointY="78.875" />
+        <AssociationConnector Association="Api.DAL.FK_ContactPersons_ContactPersonTypes" />
+        <AssociationConnector Association="Api.DAL.FK_ContactPersons_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.Gender" Width="1.5" PointX="5.25" PointY="56.125" />
+        <AssociationConnector Association="Api.DAL.FK_ContactPersons_Genders" />
+        <AssociationConnector Association="Api.DAL.FK_Genders_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.Skill" Width="1.5" PointX="5.25" PointY="112.75" />
+        <AssociationConnector Association="Api.DAL.FK_Skills_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.ServiceGroup" Width="1.5" PointX="5.25" PointY="51.625" />
+        <AssociationConnector Association="Api.DAL.FK_ServiceGroups_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.Service" Width="1.5" PointX="7.5" PointY="67.25" />
+        <AssociationConnector Association="Api.DAL.FK_Services_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_Services_MainServiceGroups" />
+        <AssociationConnector Association="Api.DAL.FK_Services_SubServiceGroups" />
+        <EntityTypeShape EntityType="Api.DAL.ClientMandate" Width="1.5" PointX="17.625" PointY="83.25" />
+        <AssociationConnector Association="Api.DAL.FK_ClientMandates_Clients" />
+        <AssociationConnector Association="Api.DAL.FK_ClientMandates_Mandates" />
+        <EntityTypeShape EntityType="Api.DAL.RepairerSkill" Width="1.5" PointX="15.375" PointY="91.5" />
+        <AssociationConnector Association="Api.DAL.FK_RepairerSkills_Repairer" />
+        <AssociationConnector Association="Api.DAL.FK_RepairerSkills_Skills" />
+        <EntityTypeShape EntityType="Api.DAL.SupplierService" Width="1.5" PointX="18.625" PointY="67.625" />
+        <AssociationConnector Association="Api.DAL.FK_SupplierServices_Services" />
+        <AssociationConnector Association="Api.DAL.FK_SupplierServices_Suppliers" />
+        <EntityTypeShape EntityType="Api.DAL.InsuranceCoverage" Width="1.5" PointX="5.25" PointY="117" />
+        <EntityTypeShape EntityType="Api.DAL.InsuranceObject" Width="1.5" PointX="5.25" PointY="121.75" />
+        <EntityTypeShape EntityType="Api.DAL.ProductDamageReason" Width="1.5" PointX="22.375" PointY="87.375" />
+        <EntityTypeShape EntityType="Api.DAL.ProductInsuranceCoverage" Width="1.5" PointX="22.375" PointY="98.25" />
+        <EntityTypeShape EntityType="Api.DAL.ProductInsuranceObject" Width="1.5" PointX="22.375" PointY="102.75" />
+        <EntityTypeShape EntityType="Api.DAL.ProductWorkActivity" Width="1.5" PointX="22.375" PointY="71.75" />
+        <EntityTypeShape EntityType="Api.DAL.WorkActivity" Width="1.5" PointX="7.5" PointY="61" />
+        <EntityTypeShape EntityType="Api.DAL.WorkActivityOption" Width="2.125" PointX="9.75" PointY="94" />
+        <AssociationConnector Association="Api.DAL.FK_InsuranceCoverages_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_InsuranceObjects_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_WorkActivities_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_ProductDamageReasons_DamageReasons" />
+        <AssociationConnector Association="Api.DAL.FK_ProductInsuranceCoverages_InsuranceCoverages" />
+        <AssociationConnector Association="Api.DAL.FK_ProductInsuranceObjects_InsuranceObjects" />
+        <AssociationConnector Association="Api.DAL.FK_ProductDamageReasons_Products" />
+        <AssociationConnector Association="Api.DAL.FK_ProductInsuranceCoverages_Products" />
+        <AssociationConnector Association="Api.DAL.FK_ProductInsuranceObjects_Products" />
+        <AssociationConnector Association="Api.DAL.FK_ProductWorkActivities_Products" />
+        <AssociationConnector Association="Api.DAL.FK_ProductWorkActivities_WorkActivities" />
+        <AssociationConnector Association="Api.DAL.FK_WorkActivityOptions_WorkActivities" />
+        <EntityTypeShape EntityType="Api.DAL.ActivityOption" Width="1.5" PointX="5.25" PointY="126.5" />
+        <AssociationConnector Association="Api.DAL.FK_ActivityOptions_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_WorkActivityOptions_ActivityOptions" />
+        <EntityTypeShape EntityType="Api.DAL.ActivityExecution" Width="1.5" PointX="5.25" PointY="43.375" />
+        <AssociationConnector Association="Api.DAL.FK_ActivityExecutions_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_WorkActivities_ActivityExecutions" />
+        <EntityTypeShape EntityType="Api.DAL.Application" Width="1.5" PointX="13.5" PointY="58" />
+        <EntityTypeShape EntityType="Api.DAL.ServiceApplication" Width="1.5" PointX="15.75" PointY="68" />
+        <EntityTypeShape EntityType="Api.DAL.ProductApplication" Width="1.5" PointX="25.375" PointY="80.625" />
+        <AssociationConnector Association="Api.DAL.FK_ProductApplications_Applications" />
+        <AssociationConnector Association="Api.DAL.FK_ServiceApplications_Applications" />
+        <AssociationConnector Association="Api.DAL.FK_ServiceApplications_Services" />
+        <AssociationConnector Association="Api.DAL.FK_ProductApplications_Product" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationUnitValidationStatus" Width="1.5" PointX="15.875" PointY="63.875" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationUnitValidationStatusHistory" Width="1.5" PointX="18.125" PointY="71.625" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnitValidationStatusHistory_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnitValidationStatusHistory_OrganizationUnitValidationStatuses" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnitValidationStatusHistory_OrganizationUnitValidationStatuses1" />
+        <EntityTypeShape EntityType="Api.DAL.DamageReasonRelation" Width="1.5" PointX="7.5" PointY="95.5" />
+        <AssociationConnector Association="Api.DAL.FK_DamageReasonHierarchy_ParentDamageReasons" />
+        <AssociationConnector Association="Api.DAL.FK_DamageReasonRelations_ChildDamageReasons" />
+        <EntityTypeShape EntityType="Api.DAL.WorkActivityRelation" Width="1.5" PointX="9.75" PointY="61.625" />
+        <AssociationConnector Association="Api.DAL.FK_WorkActivityRelations_ChildWorkActivities" />
+        <AssociationConnector Association="Api.DAL.FK_WorkActivityRelations_ParentWorkActivities" />
+        <EntityTypeShape EntityType="Api.DAL.InsuranceObjectHierarchy" Width="1.5" PointX="7.5" PointY="122.125" />
+        <AssociationConnector Association="Api.DAL.FK_InsuranceObjectHierarchy_InsuranceObjects" />
+        <AssociationConnector Association="Api.DAL.InsuranceObjectInsuranceObjectHierarchy" />
+        <EntityTypeShape EntityType="Api.DAL.InsuranceCoverageHierarchy" Width="1.5" PointX="7.5" PointY="117.375" />
+        <AssociationConnector Association="Api.DAL.FK_InsuranceCoverageHierarchy_InsuranceCoverages" />
+        <AssociationConnector Association="Api.DAL.InsuranceCoverageInsuranceCoverageHierarchy" />
+        <EntityTypeShape EntityType="Api.DAL.DamageLocation" Width="1.5" PointX="5.25" PointY="47.625" />
+        <AssociationConnector Association="Api.DAL.FK_DamageLocations_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.Brand" Width="1.5" PointX="17.875" PointY="93.625" />
+        <EntityTypeShape EntityType="Api.DAL.ModelProduct" Width="1.5" PointX="22.375" PointY="80.625" />
+        <EntityTypeShape EntityType="Api.DAL.Model" Width="1.5" PointX="20.125" PointY="104.25" />
+        <EntityTypeShape EntityType="Api.DAL.ModelSpecification" Width="1.5" PointX="22.625" PointY="91.75" />
+        <AssociationConnector Association="Api.DAL.FK_Models_Brands" />
+        <AssociationConnector Association="Api.DAL.FK_ModelProducts_Models" />
+        <AssociationConnector Association="Api.DAL.FK_ModelProducts_Products" />
+        <AssociationConnector Association="Api.DAL.FK_ModelSpecifications_Models" />
+        <EntityTypeShape EntityType="Api.DAL.Specification" Width="1.5" PointX="20.125" PointY="97.25" />
+        <AssociationConnector Association="Api.DAL.FK_ModelSpecifications_Specifications" />
+        <EntityTypeShape EntityType="Api.DAL.ClientAgent" Width="1.5" PointX="15.375" PointY="76.375" />
+        <AssociationConnector Association="Api.DAL.FK_ClientAgents_Agents" />
+        <AssociationConnector Association="Api.DAL.FK_ClientAgents_Clients" />
+        <EntityTypeShape EntityType="Api.DAL.ProductExclusion" Width="1.5" PointX="25.375" PointY="93.375" />
+        <AssociationConnector Association="Api.DAL.FK_ProductExclusions_DamageReasons" />
+        <AssociationConnector Association="Api.DAL.FK_ProductExclusions_InsuranceCoverages" />
+        <AssociationConnector Association="Api.DAL.FK_ProductExclusions_InsuranceObjects" />
+        <AssociationConnector Association="Api.DAL.FK_ProductExclusions_Products" />
+        <AssociationConnector Association="Api.DAL.FK_ProductExclusions_WorkActivities" />
+        <EntityTypeShape EntityType="Api.DAL.BusinessHour" Width="1.5" PointX="13.125" PointY="88.5" />
+        <AssociationConnector Association="Api.DAL.FK_BusinessHours_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.PaintType" Width="1.5" PointX="5.25" PointY="65.5" />
+        <AssociationConnector Association="Api.DAL.FK_PaintType_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.Status" Width="1.5" PointX="5.25" PointY="38.5" />
+        <AssociationConnector Association="Api.DAL.FK_Status_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.Fuel" Width="1.5" PointX="5.25" PointY="131.625" />
+        <AssociationConnector Association="Api.DAL.FK_Fuels_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.Transmission" Width="1.5" PointX="5.25" PointY="33.75" />
+        <AssociationConnector Association="Api.DAL.FK_Transmissions_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.MeterReadingDetermined" Width="1.5" PointX="5.25" PointY="135.875" />
+        <AssociationConnector Association="Api.DAL.FK_MeterReadingDetermined_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.MeterReadingQuantity" Width="1.5" PointX="5.25" PointY="28.875" />
+        <AssociationConnector Association="Api.DAL.FK_MeterReadingQuantities_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.InputMethod" Width="1.5" PointX="5.25" PointY="140" />
+        <AssociationConnector Association="Api.DAL.FK_InputMethods_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.Color" Width="1.5" PointX="5.25" PointY="24.125" />
+        <AssociationConnector Association="Api.DAL.FK_Colors_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.Chain" Width="1.5" PointX="5.25" PointY="144.25" />
+        <AssociationConnector Association="Api.DAL.FK_Chains_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.RoleCode" Width="1.5" PointX="5.25" PointY="148.375" />
+        <AssociationConnector Association="Api.DAL.FK_RoleCodes_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.CorrespondenceMethod" Width="1.5" PointX="5.25" PointY="14.5" />
+        <AssociationConnector Association="Api.DAL.FK_CorrespondenceMethods_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnits_CorrespondenceMethods" />
+        <EntityTypeShape EntityType="Api.DAL.ProductDamageLocation" Width="1.5" PointX="22.375" PointY="65.25" />
+        <AssociationConnector Association="Api.DAL.FK_ProductDamageLocations_DamageReasons" />
+        <AssociationConnector Association="Api.DAL.FK_ProductDamageLocations_Products" />
+        <EntityTypeShape EntityType="Api.DAL.InsuranceObjectDamageLocation" Width="1.5" PointX="9.875" PointY="87.25" />
+        <AssociationConnector Association="Api.DAL.FK_ProductDamageLocations_InsuranceObjects" />
+        <AssociationConnector Association="Api.DAL.FK_Models_InsuranceObjects" />
+        <EntityTypeShape EntityType="Api.DAL.TimeWindowList" Width="1.5" PointX="13.125" PointY="52.875" />
+        <EntityTypeShape EntityType="Api.DAL.TimeWindow" Width="1.5" PointX="15.375" PointY="53.125" />
+        <AssociationConnector Association="Api.DAL.FK_TimeWindowLists_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_TimeWindows_TimeWindowLists" />
+        <AssociationConnector Association="Api.DAL.FK_Products_TimeWindowLists" />
+        <EntityTypeShape EntityType="Api.DAL.Currency" Width="1.5" PointX="5.25" PointY="156.875" />
+        <EntityTypeShape EntityType="Api.DAL.SepaCountry" Width="1.5" PointX="7.5" PointY="153" />
+        <EntityTypeShape EntityType="Api.DAL.Country" Width="1.5" PointX="5.25" PointY="152.75" />
+        <AssociationConnector Association="Api.DAL.FK_Currencies_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_SepaCountries_Countries" />
+        <AssociationConnector Association="Api.DAL.FK_Countries_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.CurrencyCountry" Width="1.5" PointX="7.5" PointY="156.875" />
+        <AssociationConnector Association="Api.DAL.FK_CurrencyCountries_Currencies" />
+        <AssociationConnector Association="Api.DAL.FK_CurrencyCountries_Countries" />
+        <EntityTypeShape EntityType="Api.DAL.ContactType" Width="1.5" PointX="5.25" PointY="152.5" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationContact" Width="1.5" PointX="13.125" PointY="110.25" />
+        <AssociationConnector Association="Api.DAL.FK_ContactTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationContacts_ContactTypes" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationContacts_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.BusinessUnit" Width="1.5" PointX="24.625" PointY="72.375" />
+        <EntityTypeShape EntityType="Api.DAL.DepartmentOffice" Width="1.5" PointX="29.125" PointY="69.25" />
+        <EntityTypeShape EntityType="Api.DAL.Department" Width="1.5" PointX="26.875" PointY="73.625" />
+        <EntityTypeShape EntityType="Api.DAL.FiscalEntity" Width="1.5" PointX="13.125" PointY="49.875" />
+        <EntityTypeShape EntityType="Api.DAL.Job" Width="1.5" PointX="24.625" PointY="50" />
+        <EntityTypeShape EntityType="Api.DAL.LegalEntity" Width="1.5" PointX="18.375" PointY="61.875" />
+        <EntityTypeShape EntityType="Api.DAL.LegalEntityType" Width="1.5" PointX="16.125" PointY="60.375" />
+        <EntityTypeShape EntityType="Api.DAL.Office" Width="1.5" PointX="24.625" PointY="63.875" />
+        <EntityTypeShape EntityType="Api.DAL.ProductLine" Width="1.5" PointX="24.625" PointY="77" />
+        <EntityTypeShape EntityType="Api.DAL.Region" Width="1.5" PointX="24.625" PointY="53.875" />
+        <EntityTypeShape EntityType="Api.DAL.AddressType" Width="1.5" PointX="21.875" PointY="63.125" />
+        <EntityTypeShape EntityType="Api.DAL.AlarmCenter" Width="1.5" PointX="13.125" PointY="98" />
+        <EntityTypeShape EntityType="Api.DAL.AssistanceLocationType" Width="1.5" PointX="5.25" PointY="10.25" />
+        <EntityTypeShape EntityType="Api.DAL.AssistancePlanType" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Api.DAL.CostAgreement" Width="1.5" PointX="24.625" PointY="58.5" />
+        <EntityTypeShape EntityType="Api.DAL.CostAgreementType" Width="1.5" PointX="22.375" PointY="58.75" />
+        <EntityTypeShape EntityType="Api.DAL.CostSettlementLine" Width="1.5" PointX="26.875" PointY="68.75" />
+        <EntityTypeShape EntityType="Api.DAL.CostSettlement" Width="1.5" PointX="21.625" PointY="67.625" />
+        <EntityTypeShape EntityType="Api.DAL.EuropeanUnionCountry" Width="1.5" PointX="8" PointY="149.75" />
+        <EntityTypeShape EntityType="Api.DAL.FixedCostAgreement" Width="1.5" PointX="26.875" PointY="60.25" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationAddress" Width="1.5" PointX="24.125" PointY="68" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationNote" Width="1.5" PointX="13.125" PointY="94.5" />
+        <EntityTypeShape EntityType="Api.DAL.ServiceCode" Width="1.5" PointX="9.75" PointY="115.625" />
+        <EntityTypeShape EntityType="Api.DAL.ServiceCodeType" Width="1.5" PointX="5.25" PointY="162.75" />
+        <EntityTypeShape EntityType="Api.DAL.UnitOfMeasure" Width="1.5" PointX="5.25" PointY="6" />
+        <EntityTypeShape EntityType="Api.DAL.DamageReasonType" Width="1.5" PointX="5.25" PointY="167" />
+        <EntityTypeShape EntityType="Api.DAL.InsuranceCoverageType" Width="1.5" PointX="3" PointY="118.75" />
+        <EntityTypeShape EntityType="Api.DAL.InsuranceObjectType" Width="1.5" PointX="3" PointY="123.625" />
+        <EntityTypeShape EntityType="Api.DAL.ProductHierarchy" Width="1.5" PointX="22.375" PointY="77.5" />
+        <EntityTypeShape EntityType="Api.DAL.ProductProperty" Width="1.5" PointX="7.375" PointY="2" />
+        <EntityTypeShape EntityType="Api.DAL.ValuationPrinciple" Width="1.5" PointX="5.25" PointY="171" />
+        <AssociationConnector Association="Api.DAL.FK_BusinessUnits_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_BusinessUnits_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Departments_BusinessUnits" />
+        <AssociationConnector Association="Api.DAL.FK_DepartmentOffices_Departments" />
+        <AssociationConnector Association="Api.DAL.FK_DepartmentOffices_Offices" />
+        <AssociationConnector Association="Api.DAL.FK_Departments_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Departments_ProductLines" />
+        <AssociationConnector Association="Api.DAL.FK_Departments_Regions" />
+        <AssociationConnector Association="Api.DAL.FK_FiscalEntities_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_LegalEntities_FiscalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_CostSettlements_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_LegalEntities_LegalEntityTypes" />
+        <AssociationConnector Association="Api.DAL.FK_LegalEntities_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Offices_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_Offices_Addresses" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationAddresses_Addresses" />
+        <AssociationConnector Association="Api.DAL.FK_AddressTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationAddresses_AddressTypes" />
+        <AssociationConnector Association="Api.DAL.FK_AlarmCenters_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Applications_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_ProductApplications_Applications1" />
+        <AssociationConnector Association="Api.DAL.FK_ServiceApplications_Applications1" />
+        <AssociationConnector Association="Api.DAL.FK_AssistanceLocationTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_AssistancePlanTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_CostAgreements_CostAgreementTypes" />
+        <AssociationConnector Association="Api.DAL.FK_CostSettlementLines_CostAgreements" />
+        <AssociationConnector Association="Api.DAL.FK_FixedCostAgreements_CostAgreements" />
+        <AssociationConnector Association="Api.DAL.FK_CostAgreementTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_CostSettlementLines_CostSettlements" />
+        <AssociationConnector Association="Api.DAL.FK_CostSettlementLines_Services" />
+        <AssociationConnector Association="Api.DAL.FK_CostSettlements_Suppliers" />
+        <AssociationConnector Association="Api.DAL.FK_EuropeanUnionCountries_Countries" />
+        <AssociationConnector Association="Api.DAL.FK_Brands_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_DamageReasonTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_InsuranceCoverageTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_InsuranceObjectTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_Models_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_ServiceCodeTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_Specifications_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_UnitOfMeasures_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_ValuationPrinciples_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationAddresses_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationAddresses_PostOfficeBox" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationNotes_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_ServiceApplications_Services1" />
+        <AssociationConnector Association="Api.DAL.FK_ServiceCodes_ServiceCodeTypes" />
+        <AssociationConnector Association="Api.DAL.FK_ServiceCodes_Services" />
+        <AssociationConnector Association="Api.DAL.FK_Models_Brands1" />
+        <AssociationConnector Association="Api.DAL.FK_InsuranceCoverages_InsuranceCoverageTypes" />
+        <AssociationConnector Association="Api.DAL.FK_InsuranceObjects_InsuranceObjectTypes" />
+        <AssociationConnector Association="Api.DAL.FK_ModelProducts_Models1" />
+        <AssociationConnector Association="Api.DAL.FK_ModelProducts_Products1" />
+        <AssociationConnector Association="Api.DAL.FK_ModelSpecifications_Models1" />
+        <AssociationConnector Association="Api.DAL.FK_ModelSpecifications_Specifications1" />
+        <AssociationConnector Association="Api.DAL.FK_ProductApplications_Products" />
+        <AssociationConnector Association="Api.DAL.FK_ProductHierarchy_Products" />
+        <EntityTypeShape EntityType="Api.DAL.Employee" Width="1.5" PointX="26.875" PointY="50.5" />
+        <AssociationConnector Association="Api.DAL.FK_Employees_Jobs" />
+        <AssociationConnector Association="Api.DAL.FK_Employees_ManagerEmployees" />
+        <AssociationConnector Association="Api.DAL.FK_Employees_Regions" />
+        <EntityTypeShape EntityType="Api.DAL.CostCenter" Width="1.5" PointX="27.625" PointY="83.875" />
+        <EntityTypeShape EntityType="Api.DAL.CostUnit" Width="1.5" PointX="27.625" PointY="78.875" />
+        <EntityTypeShape EntityType="Api.DAL.GeneralLedger" Width="1.5" PointX="28.375" PointY="89.5" />
+        <EntityTypeShape EntityType="Api.DAL.Journal" Width="1.5" PointX="30.625" PointY="74.75" />
+        <EntityTypeShape EntityType="Api.DAL.JournalType" Width="1.5" PointX="28.375" PointY="63.625" />
+        <AssociationConnector Association="Api.DAL.FK_BusinessUnits_CostCenters" />
+        <AssociationConnector Association="Api.DAL.FK_Departments_CostUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Products_Departments1" />
+        <AssociationConnector Association="Api.DAL.FK_CostCenters_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_CostUnits_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_Journals_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_LegalEntities_BankAccounts" />
+        <AssociationConnector Association="Api.DAL.FK_LegalEntities_CreditPurchaseJournals" />
+        <AssociationConnector Association="Api.DAL.FK_LegalEntities_CreditSalesJournals" />
+        <AssociationConnector Association="Api.DAL.FK_LegalEntities_PurchaseJournals" />
+        <AssociationConnector Association="Api.DAL.FK_LegalEntities_SalesJournals" />
+        <AssociationConnector Association="Api.DAL.FK_LegalEntities_Suppliers" />
+        <AssociationConnector Association="Api.DAL.FK_CostCenters_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_CostUnits_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_GeneralLedgers_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_Journals_GeneralLedgers" />
+        <AssociationConnector Association="Api.DAL.FK_Journals_BankAccounts" />
+        <AssociationConnector Association="Api.DAL.FK_Journals_JournalTypes" />
+        <AssociationConnector Association="Api.DAL.FK_Journals_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_JournalTypes_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.DocumentType" Width="1.5" PointX="15.75" PointY="109.5" />
+        <EntityTypeShape EntityType="Api.DAL.Document" Width="1.5" PointX="18" PointY="109.25" />
+        <EntityTypeShape EntityType="Api.DAL.AssistancePlanStatus" Width="1.5" PointX="5.25" PointY="19.875" />
+        <EntityTypeShape EntityType="Api.DAL.BankAccountAttachment" Width="1.5" PointX="20.25" PointY="92.5" />
+        <EntityTypeShape EntityType="Api.DAL.BankAccountValidation" Width="1.5" PointX="32.125" PointY="69.125" />
+        <EntityTypeShape EntityType="Api.DAL.InternationalAssistanceGroup" Width="1.5" PointX="29.125" PointY="59" />
+        <EntityTypeShape EntityType="Api.DAL.InternationalAssistanceGroupType" Width="1.5" PointX="26.875" PointY="45.625" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationLabel" Width="1.5" PointX="19.125" PointY="56.625" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationLabelType" Width="1.5" PointX="16.875" PointY="48.625" />
+        <EntityTypeShape EntityType="Api.DAL.SupplierBrand" Width="1.5" PointX="30.125" PointY="83" />
+        <EntityTypeShape EntityType="Api.DAL.VatNumberValidation" Width="1.5" PointX="9.625" PointY="6" />
+        <EntityTypeShape EntityType="Api.DAL.VatNumberValidationSource" Width="1.5" PointX="7.375" PointY="6.375" />
+        <AssociationConnector Association="Api.DAL.FK_Documents_DocumentTypes" />
+        <AssociationConnector Association="Api.DAL.FK_BankAccountValidations_Employees" />
+        <AssociationConnector Association="Api.DAL.FK_BankAccountAttachments_Documents" />
+        <AssociationConnector Association="Api.DAL.FK_AssistancePlanStatuses_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_BankAccountAttachments_BankAccounts" />
+        <AssociationConnector Association="Api.DAL.FK_BankAccountValidations_BankAccountAttachments" />
+        <AssociationConnector Association="Api.DAL.FK_BankAccountValidations_BankAccounts" />
+        <AssociationConnector Association="Api.DAL.FK_InternationalAssistanceGroups_InternationalAssistanceGroupTypes" />
+        <AssociationConnector Association="Api.DAL.FK_InternationalAssistanceGroups_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_InternationalAssistanceGroupTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationLabelTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationLabels_OrganizationLabelTypes" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationLabels_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_SupplierBrands_Brands" />
+        <AssociationConnector Association="Api.DAL.FK_SupplierBrands_Suppliers" />
+        <AssociationConnector Association="Api.DAL.FK_VatNumberValidations_VatNumberValidationSource" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationApplication" Width="1.5" PointX="21.75" PointY="54.125" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationTaxCode" Width="1.5" PointX="30.625" PointY="64.875" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationTaxCodes_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationApplications_Applications" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationApplications_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationTaxCodes_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.AuthorizationGroupRole" Width="1.5" PointX="10.125" PointY="176.375" />
+        <EntityTypeShape EntityType="Api.DAL.AuthorizationRoleInheritance" Width="1.5" PointX="12.375" PointY="175.5" />
+        <EntityTypeShape EntityType="Api.DAL.AuthorizationRole" Width="1.5" PointX="7.875" PointY="176.125" />
+        <EntityTypeShape EntityType="Api.DAL.AuthorizationRoleType" Width="1.5" PointX="5.625" PointY="176" />
+        <EntityTypeShape EntityType="Api.DAL.EmployeeAuthorization" Width="1.5" PointX="29.5" PointY="112.5" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationAccountAttachment" Width="1.5" PointX="25.625" PointY="98.625" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationAccountValidation" Width="1.5" PointX="33.5" PointY="74.25" />
+        <EntityTypeShape EntityType="Api.DAL.AuthorizationRoleInheritanceView" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Api.DAL.AuthorizationRolesView" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Api.DAL.EmployeeAuthorizationsView" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Api.DAL.SupplierTaxCodesView" Width="1.5" PointX="11.75" PointY="0.75" />
+        <AssociationConnector Association="Api.DAL.FK_EmployeeAuthorizations_Employees" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationAccountValidations_Employees" />
+        <AssociationConnector Association="Api.DAL.FK_EmployeeAuthorizations_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationAccountAttachments_Documents" />
+        <AssociationConnector Association="Api.DAL.FK_AuthorizationGroupRoles_AuthorizationRoles" />
+        <AssociationConnector Association="Api.DAL.FK_AuthorizationRoleInheritance_AuthorizationGroupRoles" />
+        <AssociationConnector Association="Api.DAL.FK_AuthorizationRoleInheritance_AuthorizationInheritedRoles" />
+        <AssociationConnector Association="Api.DAL.FK_AuthorizationRoles_AuthorizationRoleTypes" />
+        <AssociationConnector Association="Api.DAL.FK_EmployeeAuthorizations_AuthorizationRoles" />
+        <AssociationConnector Association="Api.DAL.FK_AuthorizationRoleTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_ModelSpecifications_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationAccountAttachments_OrganizationAccounts" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationAccountValidations_OrganizationAccountAttachments" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationAccountValidations_OrganizationAccounts" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationVatValidation" Width="1.5" PointX="32.125" PointY="60.375" />
+        <EntityTypeShape EntityType="Api.DAL.DepartmentsView" Width="1.5" PointX="12.375" PointY="4.75" />
+        <EntityTypeShape EntityType="Api.DAL.EmployeesView" Width="1.5" PointX="12.375" PointY="10.75" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationVatValidations_Employees" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationVatValidations_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.ClientInsuranceProduct" Width="1.5" PointX="15.75" PointY="101" />
+        <EntityTypeShape EntityType="Api.DAL.ClientInvoiceRecipient" Width="1.5" PointX="31.75" PointY="87.625" />
+        <EntityTypeShape EntityType="Api.DAL.LegalEntitiesView" Width="1.5" PointX="0.75" PointY="13.75" />
+        <AssociationConnector Association="Api.DAL.FK_ClientInsuranceProducts_Clients" />
+        <AssociationConnector Association="Api.DAL.FK_ClientInsuranceProducts_DebtorClients" />
+        <AssociationConnector Association="Api.DAL.FK_ClientInsuranceProducts_InsuranceCoverages" />
+        <AssociationConnector Association="Api.DAL.FK_ClientInvoiceRecipients_Clients" />
+        <AssociationConnector Association="Api.DAL.FK_ClientInvoiceRecipients_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.DocumentNumber" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Api.DAL.NextNumber" Width="1.5" PointX="14.375" PointY="5.75" />
+        <EntityTypeShape EntityType="Api.DAL.CreditorAttribute" Width="1.5" PointX="14.375" PointY="10.75" />
+        <EntityTypeShape EntityType="Api.DAL.CreditorOrganizationRelation" Width="1.5" PointX="36.875" PointY="71.875" />
+        <EntityTypeShape EntityType="Api.DAL.Creditor" Width="1.5" PointX="34.625" PointY="64.5" />
+        <EntityTypeShape EntityType="Api.DAL.Insurer" Width="1.5" PointX="13.125" PointY="45.625" />
+        <AssociationConnector Association="Api.DAL.FK_Creditors_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_CreditorOrganizationRelations_Creditors" />
+        <AssociationConnector Association="Api.DAL.FK_CreditorOrganizationRelations_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Creditors_Addresses" />
+        <AssociationConnector Association="Api.DAL.FK_Creditors_BankAccounts" />
+        <AssociationConnector Association="Api.DAL.FK_Creditors_BlockedAccounts" />
+        <AssociationConnector Association="Api.DAL.FK_Creditors_Genders" />
+        <AssociationConnector Association="Api.DAL.FK_Creditors_PostOfficeBox" />
+        <AssociationConnector Association="Api.DAL.FK_Creditors_Tenants" />
+        <AssociationConnector Association="Api.DAL.FK_Insurers_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Mandates_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.DocumentTypeDepartment" Width="1.5" PointX="31.125" PointY="91.75" />
+        <EntityTypeShape EntityType="Api.DAL.PaymentCondition" Width="1.5" PointX="20.625" PointY="48.875" />
+        <EntityTypeShape EntityType="Api.DAL.InsurerAlarmCenter" Width="1.5" PointX="31.375" PointY="56" />
+        <EntityTypeShape EntityType="Api.DAL.MandateAlarmCenter" Width="1.5" PointX="24.625" PointY="103.5" />
+        <EntityTypeShape EntityType="Api.DAL.TimeSlot" Width="1.5" PointX="30.125" PointY="100" />
+        <EntityTypeShape EntityType="Api.DAL.TimeTable" Width="1.5" PointX="30.125" PointY="95.875" />
+        <EntityTypeShape EntityType="Api.DAL.TimeTableSlot" Width="1.5" PointX="32.375" PointY="96" />
+        <EntityTypeShape EntityType="Api.DAL.AppointmentTimeSlot" Width="1.5" PointX="32.375" PointY="82" />
+        <AssociationConnector Association="Api.DAL.FK_DocumentTypeDepartments_Departments" />
+        <AssociationConnector Association="Api.DAL.FK_HandlingCountries_Departments1" />
+        <AssociationConnector Association="Api.DAL.FK_SubContract_Departments1" />
+        <AssociationConnector Association="Api.DAL.FK_DocumentTypeDepartments_DocumentTypes" />
+        <AssociationConnector Association="Api.DAL.FK_DocumentTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_HandlingCountries_LegalEntities1" />
+        <AssociationConnector Association="Api.DAL.FK_LegalEntities_PaymentConditions" />
+        <AssociationConnector Association="Api.DAL.FK_PaymentConditions_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_SubContract_LegalEntities1" />
+        <AssociationConnector Association="Api.DAL.FK_InsurerAlarmCenters_AlarmCenters" />
+        <AssociationConnector Association="Api.DAL.FK_MandateAlarmCenters_AlarmCenters" />
+        <AssociationConnector Association="Api.DAL.FK_InsurerAlarmCenters_Insurers" />
+        <AssociationConnector Association="Api.DAL.FK_MandateAlarmCenters_Mandates" />
+        <AssociationConnector Association="Api.DAL.FK_TimeTableSlots_TimeSlots" />
+        <AssociationConnector Association="Api.DAL.FK_AppointmentTimeSlots_TimeTables" />
+        <AssociationConnector Association="Api.DAL.FK_TimeTableSlots_TimeTables" />
+        <AssociationConnector Association="Api.DAL.FK_AppointmentTimeSlots_Products" />
+        <AssociationConnector Association="Api.DAL.FK_SupplierBrands_InsuranceObjects" />
+        <EntityTypeShape EntityType="Api.DAL.CreditorAccount" Width="1.5" PointX="36.875" PointY="76.125" />
+        <EntityTypeShape EntityType="Api.DAL.DebtorAccount" Width="1.5" PointX="36.875" PointY="81.875" />
+        <EntityTypeShape EntityType="Api.DAL.Debtor" Width="1.5" PointX="34.625" PointY="79.625" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationPaymentCondition" Width="1.5" PointX="33.875" PointY="56" />
+        <AssociationConnector Association="Api.DAL.FK_Debtors_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_CreditorAccounts_BankAccounts" />
+        <AssociationConnector Association="Api.DAL.FK_CreditorAccounts_Creditors" />
+        <AssociationConnector Association="Api.DAL.FK_Creditors_Suppliers" />
+        <AssociationConnector Association="Api.DAL.FK_DebtorAccounts_BankAccounts" />
+        <AssociationConnector Association="Api.DAL.FK_DebtorAccounts_Debtors" />
+        <AssociationConnector Association="Api.DAL.FK_Debtors_Addresses" />
+        <AssociationConnector Association="Api.DAL.FK_Debtors_BankAccounts" />
+        <AssociationConnector Association="Api.DAL.FK_Debtors_Genders" />
+        <AssociationConnector Association="Api.DAL.FK_Debtors_PostOfficeBox" />
+        <AssociationConnector Association="Api.DAL.FK_Debtors_Tenants" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationPaymentConditions_PaymentConditions" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationPaymentConditions_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.PaymentMethod" Width="1.5" PointX="34.375" PointY="51.5" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationPaymentMethod" Width="1.5" PointX="36.625" PointY="59.5" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationPaymentMethods_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationPaymentMethods_PaymentMethods" />
+        <AssociationConnector Association="Api.DAL.FK_PaymentMethods_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationPaymentMethods_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.DebtorAttribute" Width="1.5" PointX="36.875" PointY="86.75" />
+        <EntityTypeShape EntityType="Api.DAL.DebtorOrganizationRelation" Width="1.5" PointX="39.875" PointY="77.375" />
+        <AssociationConnector Association="Api.DAL.FK_DebtorAttributes_Debtors" />
+        <AssociationConnector Association="Api.DAL.FK_DebtorOrganizationRelations_ClientMandates" />
+        <AssociationConnector Association="Api.DAL.FK_DebtorOrganizationRelations_Debtors" />
+        <AssociationConnector Association="Api.DAL.FK_DebtorOrganizationRelations_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_Debtors_Clients" />
+        <EntityTypeShape EntityType="Api.DAL.ContractParty" Width="1.5" PointX="13.125" PointY="41.5" />
+        <EntityTypeShape EntityType="Api.DAL.ConvenantParty" Width="1.5" PointX="13.125" PointY="38" />
+        <AssociationConnector Association="Api.DAL.FK_ContractParties_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_ConvenantParties_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.CoverageProduct" Width="1.5" PointX="26.875" PointY="39.375" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationUnitCoverageProduct" Width="1.5" PointX="29.125" PointY="53.25" />
+        <AssociationConnector Association="Api.DAL.FK_CoverageProducts_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnitCoverageProducts_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnitCoverageProducts_CoverageProducts" />
+        <AssociationConnector Association="Api.DAL.FK_CoverageProducts_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationUnitCoverageProductsExtension" Width="1.5" PointX="37.375" PointY="65.75" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnitCoverageProductsExtension_ExternalCostInvoiceRecipient" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnitCoverageProductsExtension_FeeInvoiceRecipient" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationUnitCoverageProductsExtension_OrganizationUnitCoverageProducts" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationCoverageProduct" Width="1.5" PointX="37.125" PointY="53.5" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationCoverageProductsExtension" Width="1.5" PointX="40.375" PointY="66.25" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationCoverageProducts_CoverageProducts" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationCoverageProducts_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationCoverageProductsExtension_OrganizationCoverageProducts" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationCoverageProductsExtension_ExternalCostInvoiceRecipient" />
+        <AssociationConnector Association="Api.DAL.FK_OrganizationCoverageProductsExtension_FeeInvoiceRecipient" />
+        <EntityTypeShape EntityType="Api.DAL.OrganizationUnitWithCurrentStatus" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Api.DAL.InvoiceDeliveryMethod" Width="1.5" PointX="5.25" PointY="180.5" />
+        <AssociationConnector Association="Api.DAL.FK_InvoiceDeliveryMethods_LocalizableEntries" />
+        <EntityTypeShape EntityType="Api.DAL.InvoiceDeliveryMethodType" Width="1.5" PointX="5.25" PointY="184.625" />
+        <AssociationConnector Association="Api.DAL.FK_InvoiceDeliveryMethodTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_InvoiceDeliveryMethods_InvoiceDeliveryMethodTypes" />
+        <AssociationConnector Association="Api.DAL.FK_Services_Products" />
+        <AssociationConnector Association="Api.DAL.FK_Debtors_InvoiceDeliveryMethods" />
+        <EntityTypeShape EntityType="Api.DAL.ClientPreferredSupplier" Width="1.5" PointX="33.625" PointY="91.875" />
+        <AssociationConnector Association="Api.DAL.FK_ClientPreferredSuppliers_Clients" />
+        <AssociationConnector Association="Api.DAL.FK_ClientPreferredSuppliers_Suppliers" />
+        <EntityTypeShape EntityType="Api.DAL.RoadAuthority" Width="1.5" PointX="13.125" PointY="128.375" />
+        <EntityTypeShape EntityType="Api.DAL.RoadAuthorityCode" Width="1.5" PointX="7.5" PointY="134.75" />
+        <EntityTypeShape EntityType="Api.DAL.RoadAuthorityType" Width="1.5" PointX="5.25" PointY="189" />
+        <AssociationConnector Association="Api.DAL.FK_RoadAuthorityCodes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_RoadAuthorityTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_RoadAuthorities_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_RoadAuthorities_RoadAuthorityTypes" />
+        <AssociationConnector Association="Api.DAL.FK_RoadAuthorityCodes_RoadAuthorityTypes" />
+        <EntityTypeShape EntityType="Api.DAL.LeasingCompany" Width="1.5" PointX="13.125" PointY="115" />
+        <EntityTypeShape EntityType="Api.DAL.BusinessUnitsView" Width="1.5" PointX="7.375" PointY="10.75" />
+        <AssociationConnector Association="Api.DAL.FK_LeasingCompanies_OrganizationUnits" />
+        <AssociationConnector Association="Api.DAL.FK_DebtorOrganizationRelations_Products" />
+        <EntityTypeShape EntityType="Api.DAL.DebtorOrganizationRelationsView" Width="1.5" PointX="9.375" PointY="10.75" />
+        <EntityTypeShape EntityType="Api.DAL.Bank" Width="1.5" PointX="13.125" PointY="33" />
+        <AssociationConnector Association="Api.DAL.FK_BankAccounts_Banks" />
+        <AssociationConnector Association="Api.DAL.FK_Banks_OrganizationUnits" />
+        <EntityTypeShape EntityType="Api.DAL.IbanCountry" Width="1.5" PointX="7.5" PointY="161.25" />
+        <AssociationConnector Association="Api.DAL.FK_IbanCountries_Countries" />
+        <AssociationConnector Association="Api.DAL.FK_IbanCountries_IbanCountries" />
+        <EntityTypeShape EntityType="Api.DAL.CoverageProductType" Width="1.5" PointX="5.25" PointY="193.875" />
+        <EntityTypeShape EntityType="Api.DAL.ProductClassification" Width="1.5" PointX="5.25" PointY="197.875" />
+        <AssociationConnector Association="Api.DAL.FK_CoverageProductTypes_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_ProductClassifications_LocalizableEntries" />
+        <AssociationConnector Association="Api.DAL.FK_CoverageProducts_CoverageProductTypes" />
+        <AssociationConnector Association="Api.DAL.FK_Products_ProductClassifications" />
+        <AssociationConnector Association="Api.DAL.FK_Employees_Departments" />
+        <EntityTypeShape EntityType="Api.DAL.DefaultTemplate" Width="1.5" PointX="29.125" PointY="46.625" />
+        <EntityTypeShape EntityType="Api.DAL.Template" Width="1.5" PointX="16.625" PointY="18" />
+        <EntityTypeShape EntityType="Api.DAL.TemplateType" Width="1.5" PointX="14.375" PointY="18.25" />
+        <AssociationConnector Association="Api.DAL.FK_DefaultTemplates_Departments" />
+        <AssociationConnector Association="Api.DAL.FK_DefaultTemplates_Templates" />
+        <AssociationConnector Association="Api.DAL.FK_Templates_TemplateTypes" />
+        <EntityTypeShape EntityType="Api.DAL.Setting" Width="1.5" PointX="11.375" PointY="15.75" />
+        <EntityTypeShape EntityType="Api.DAL.ClientTemplate" Width="1.5" PointX="20.625" PointY="43.75" />
+        <AssociationConnector Association="Api.DAL.FK_ClientTemplates_LegalEntities" />
+        <AssociationConnector Association="Api.DAL.FK_ClientTemplates_Clients" />
+        <AssociationConnector Association="Api.DAL.FK_ClientTemplates_Templates" />
+        <EntityTypeShape EntityType="Api.DAL.DebtorTemplate" Width="1.5" PointX="39.875" PointY="55.375" />
+        <AssociationConnector Association="Api.DAL.FK_DebtorTemplates_BusinessUnits" />
+        <AssociationConnector Association="Api.DAL.FK_DebtorTemplates_Departments" />
+        <AssociationConnector Association="Api.DAL.FK_DebtorTemplates_Debtors" />
+        <AssociationConnector Association="Api.DAL.FK_DebtorTemplates_Templates" />
+        <AssociationConnector Association="Api.DAL.FK_ProductExclusions_ActivityExecutions" />
+        <AssociationConnector Association="Api.DAL.FK_ProductExclusions_ActivityOptions" />
+        <AssociationConnector Association="Api.DAL.FK_ProductExclusions_ReportingFormActivityOptions" />
+        <AssociationConnector Association="Api.DAL.FK_ProductHierarchy_ChildProducts" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+
+  <configSections xdt:Transform="InsertIfMissing">
+  </configSections>
+  <configSections>
+    <section name="serviceBusSettings" type="CED.Framework.Messaging.ServiceBusQueue.ServiceBusSettings, CED.Framework.Messaging"
+             xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+  </configSections>
+
+  <serviceBusSettings xdt:Transform="Remove">
+  </serviceBusSettings>
+
+</configuration>

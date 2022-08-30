@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+	<configSections>
+		<section name="allowedCertificates" type="Ced.Wcf.X509CertificatesValidator.AllowedCertificatesSection, Ced.Wcf.X509CertificatesValidator" xdt:Transform="Insert" />
+	</configSections>
+
+	<allowedCertificates xdt:Transform="Insert">
+		<certificates>
+			<add name="--AppName--" thumbprint="--Enter thumbprint here--" />
+		</certificates>
+	</allowedCertificates>
+</configuration>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Ced.DocumentArchive.DmsService" elementFormDefault="qualified" targetNamespace="http://Ced.DocumentArchive.DmsService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Request" />
+  <xs:import schemaLocation="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Response" />
+  <xs:element name="GetDocumentById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Request" minOccurs="0" name="request" nillable="true" type="q1:GetDocumentByIdRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Response" minOccurs="0" name="GetDocumentByIdResult" nillable="true" type="q2:GetDocumentByIdResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByIndeces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Request" minOccurs="0" name="request" nillable="true" type="q3:GetDocumentsByIndecesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByIndecesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Response" minOccurs="0" name="GetDocumentsByIndecesResult" nillable="true" type="q4:GetDocumentsByIndecesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Request" minOccurs="0" name="request" nillable="true" type="q5:SaveDocumentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Response" minOccurs="0" name="SaveDocumentResult" nillable="true" type="q6:SaveDocumentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpateDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Request" minOccurs="0" name="request" nillable="true" type="q7:UpdateDocumentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpateDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Response" minOccurs="0" name="UpateDocumentResult" nillable="true" type="q8:UpateDocumentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DuplicateDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Request" minOccurs="0" name="request" nillable="true" type="q9:DuplicateDocumentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DuplicateDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Response" minOccurs="0" name="DuplicateDocumentResult" nillable="true" type="q10:DuplicateDocumentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

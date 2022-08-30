@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://ced.com/IbanService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="IbanServiceInternal" targetNamespace="http://ced.com/IbanService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IbanService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="true" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/CED.Business.Public.Messages.Ping.Request" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/CED.Business.Public.Messages.Ping.Response" />
+      <xs:element name="Ping">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CED.Business.Public.Messages.Ping.Request" minOccurs="0" name="request" nillable="true" type="q1:PingRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PingResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CED.Business.Public.Messages.Ping.Response" minOccurs="0" name="PingResult" nillable="true" type="q2:PingResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CED.Business.Public.Messages.Ping.Request" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CED.Business.Public.Messages.Ping.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://ced.com/MasterDataService/data" />
+      <xs:complexType name="PingRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://ced.com/MasterDataService/data" base="q1:RequestBase">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="PingRequest" nillable="true" type="tns:PingRequest" />
+    </xs:schema>
+    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://ced.com/MasterDataService/data" elementFormDefault="qualified" targetNamespace="http://ced.com/MasterDataService/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="RequestBase">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="RequestBase" nillable="true" type="tns:RequestBase" />
+      <xs:complexType name="ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExecutionTime" type="xs:long" />
+          <xs:element minOccurs="0" name="ExceptionOccurred" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ExceptionMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExceptionTrace" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LookupId" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CED.Business.Public.Messages.Ping.Response" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CED.Business.Public.Messages.Ping.Response" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://ced.com/MasterDataService/data" />
+      <xs:complexType name="PingResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://ced.com/MasterDataService/data" base="q1:ResponseBase">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="PingResponse" nillable="true" type="tns:PingResponse" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://ced.com/IbanService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://ced.com/IbanService/data" />
+      <xs:element name="ValidateIban">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://ced.com/IbanService/data" minOccurs="0" name="request" nillable="true" type="q1:ValidateIbanRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateIbanResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://ced.com/IbanService/data" minOccurs="0" name="ValidateIbanResult" nillable="true" type="q2:ValidateIbanResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBic">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://ced.com/IbanService/data" minOccurs="0" name="request" nillable="true" type="q3:GetBicRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBicResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://ced.com/IbanService/data" minOccurs="0" name="GetBicResult" nillable="true" type="q4:GetBicResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ResolveBic">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://ced.com/IbanService/data" minOccurs="0" name="request" nillable="true" type="q5:ResolveBicRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ResolveBicResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://ced.com/IbanService/data" minOccurs="0" name="ResolveBicResult" nillable="true" type="q6:ResolveBicResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://ced.com/IbanService/data" elementFormDefault="qualified" targetNamespace="http://ced.com/IbanService/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://ced.com/MasterDataService/data" />
+      <xs:complexType name="ValidateIbanRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://ced.com/MasterDataService/data" base="q1:RequestBase">
+            <xs:sequence>
+              <xs:element name="Iban" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ValidateIbanRequest" nillable="true" type="tns:ValidateIbanRequest" />
+      <xs:complexType name="ValidateIbanResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q2="http://ced.com/MasterDataService/data" base="q2:ResponseBase">
+            <xs:sequence>
+              <xs:element name="Iban" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Bic" nillable="true" type="xs:string" />
+              <xs:element name="IsValidIban" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="BankName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="BankAddress" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="BankCode" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ValidateIbanResponse" nillable="true" type="tns:ValidateIbanResponse" />
+      <xs:complexType name="GetBicRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q3="http://ced.com/MasterDataService/data" base="q3:RequestBase">
+            <xs:sequence>
+              <xs:element name="BankCode" nillable="true" type="xs:string" />
+              <xs:element name="CountryCode" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="GetBicRequest" nillable="true" type="tns:GetBicRequest" />
+      <xs:complexType name="GetBicResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q4="http://ced.com/MasterDataService/data" base="q4:ResponseBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Bic" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="GetBicResponse" nillable="true" type="tns:GetBicResponse" />
+      <xs:complexType name="ResolveBicRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q5="http://ced.com/MasterDataService/data" base="q5:RequestBase">
+            <xs:sequence>
+              <xs:element name="Iban" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ResolveBicRequest" nillable="true" type="tns:ResolveBicRequest" />
+      <xs:complexType name="ResolveBicResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q6="http://ced.com/MasterDataService/data" base="q6:ResponseBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Bic" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ResolveBicResponse" nillable="true" type="tns:ResolveBicResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IbanService_Ping_InputMessage">
+    <wsdl:part xmlns:q1="http://tempuri.org/" name="parameters" element="q1:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IbanService_Ping_OutputMessage">
+    <wsdl:part xmlns:q2="http://tempuri.org/" name="parameters" element="q2:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IbanService_ValidateIban_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateIban" />
+  </wsdl:message>
+  <wsdl:message name="IbanService_ValidateIban_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateIbanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IbanService_GetBic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBic" />
+  </wsdl:message>
+  <wsdl:message name="IbanService_GetBic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IbanService_ResolveBic_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveBic" />
+  </wsdl:message>
+  <wsdl:message name="IbanService_ResolveBic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveBicResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IbanService">
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="Ping" message="tns:IbanService_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPingService/PingResponse" message="tns:IbanService_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateIban">
+      <wsdl:input wsaw:Action="ValidateIban" message="tns:IbanService_ValidateIban_InputMessage" />
+      <wsdl:output wsaw:Action="http://ced.com/IbanService/IbanService/ValidateIbanResponse" message="tns:IbanService_ValidateIban_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBic">
+      <wsdl:input wsaw:Action="GetBic" message="tns:IbanService_GetBic_InputMessage" />
+      <wsdl:output wsaw:Action="http://ced.com/IbanService/IbanService/GetBicResponse" message="tns:IbanService_GetBic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResolveBic">
+      <wsdl:input wsaw:Action="ResolveBic" message="tns:IbanService_ResolveBic_InputMessage" />
+      <wsdl:output wsaw:Action="http://ced.com/IbanService/IbanService/ResolveBicResponse" message="tns:IbanService_ResolveBic_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IbanService" type="tns:IbanService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IbanService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateIban">
+      <soap:operation soapAction="ValidateIban" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBic">
+      <soap:operation soapAction="GetBic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResolveBic">
+      <soap:operation soapAction="ResolveBic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IbanServiceInternal">
+    <wsdl:port name="BasicHttpBinding_IbanService" binding="tns:BasicHttpBinding_IbanService">
+      <soap:address location="https://wa-masterdataiban-t.azurewebsites.net/IbanService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

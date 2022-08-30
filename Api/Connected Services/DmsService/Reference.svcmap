@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5b37b01a-bed7-46a9-80c9-4c642ccbacf9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://wa-masterdatadms-t.azurewebsites.net/dmsservice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DmsService.xsd" MetadataType="Schema" ID="cf447eb2-d053-43b5-b3ae-d616f7d7647a" SourceId="1" SourceUrl="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DmsService1.xsd" MetadataType="Schema" ID="8db05d7b-6d7b-400f-96a8-842f2a68404f" SourceId="1" SourceUrl="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd4" />
+    <MetadataFile FileName="DmsService2.xsd" MetadataType="Schema" ID="5f8a0f59-e627-4c63-81e7-748225a25cd4" SourceId="1" SourceUrl="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DmsService3.xsd" MetadataType="Schema" ID="c7ce869e-1c2e-4969-b10d-de11e1255f04" SourceId="1" SourceUrl="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd6" />
+    <MetadataFile FileName="DmsService4.xsd" MetadataType="Schema" ID="c1471cae-bd05-42f0-bd36-58b3b04177c9" SourceId="1" SourceUrl="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DmsService.disco" MetadataType="Disco" ID="29448a19-76eb-43aa-9a1a-60b13dfdf5b2" SourceId="1" SourceUrl="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?disco" />
+    <MetadataFile FileName="DmsService5.xsd" MetadataType="Schema" ID="9ebd6a90-da9e-4422-a406-ca7122e722e5" SourceId="1" SourceUrl="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DmsService.wsdl" MetadataType="Wsdl" ID="43e6e806-48a9-4832-bcf9-82409784da39" SourceId="1" SourceUrl="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?wsdl" />
+    <MetadataFile FileName="DmsService6.xsd" MetadataType="Schema" ID="fd263302-bbb0-4815-80bb-ab3ba0467c05" SourceId="1" SourceUrl="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd5" />
+    <MetadataFile FileName="DmsService7.xsd" MetadataType="Schema" ID="73b79c44-759d-4505-b1f2-9008e34a475e" SourceId="1" SourceUrl="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

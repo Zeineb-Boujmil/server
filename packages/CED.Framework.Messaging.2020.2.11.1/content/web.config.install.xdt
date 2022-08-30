@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  
+  <configSections xdt:Transform="InsertBefore(/configuration/*[1])" />
+  <configSections xdt:Locator="XPath(/configuration/configSections[last()])">
+    <section name="serviceBusSettings" type="CED.Framework.Messaging.ServiceBusQueue.ServiceBusSettings, CED.Framework.Messaging"
+             xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+  </configSections>
+  <configSections xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+  
+  <serviceBusSettings xdt:Transform="InsertIfMissing">
+  </serviceBusSettings>
+
+  <serviceBusSettings>
+    <serviceBusQueueSettings xdt:Transform="InsertIfMissing">
+    </serviceBusQueueSettings>
+  </serviceBusSettings>
+
+  <serviceBusSettings>
+    <serviceBusQueueSettings>
+      <add name="" serviceBusNamespace="" sasKeyName="" sasKeyValue="" queueName=""
+           xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+    </serviceBusQueueSettings>
+  </serviceBusSettings>
+  
+</configuration>

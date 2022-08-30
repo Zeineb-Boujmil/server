@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfArchiveIndex">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArchiveIndex" nillable="true" type="tns:ArchiveIndex" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArchiveIndex" nillable="true" type="tns:ArrayOfArchiveIndex" />
+  <xs:complexType name="ArchiveIndex">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArchiveIndex" nillable="true" type="tns:ArchiveIndex" />
+  <xs:complexType name="ArrayOfPage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Page" nillable="true" type="tns:Page" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPage" nillable="true" type="tns:ArrayOfPage" />
+  <xs:complexType name="Page">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndexedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Mime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Page" nillable="true" type="tns:Page" />
+</xs:schema>

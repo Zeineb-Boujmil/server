@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Response" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Response" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService" />
+  <xs:import schemaLocation="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Entities" />
+  <xs:import schemaLocation="https://wa-masterdatadms-t.azurewebsites.net/DmsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="PingResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService" base="q1:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PingResponse" nillable="true" type="tns:PingResponse" />
+  <xs:complexType name="GetDocumentByIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Entities" minOccurs="0" name="Document" nillable="true" type="q3:Document" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDocumentByIdResponse" nillable="true" type="tns:GetDocumentByIdResponse" />
+  <xs:complexType name="GetDocumentsByIndecesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService" base="q4:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService.Messages.Entities" minOccurs="0" name="Documents" nillable="true" type="q5:ArrayOfDocument" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDocumentsByIndecesResponse" nillable="true" type="tns:GetDocumentsByIndecesResponse" />
+  <xs:complexType name="SaveDocumentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService" base="q6:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveDocumentResponse" nillable="true" type="tns:SaveDocumentResponse" />
+  <xs:complexType name="UpateDocumentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService" base="q7:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpateDocumentResponse" nillable="true" type="tns:UpateDocumentResponse" />
+  <xs:complexType name="DuplicateDocumentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Ced.DocumentArchive.DmsService" base="q8:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DuplicateDocumentResponse" nillable="true" type="tns:DuplicateDocumentResponse" />
+</xs:schema>

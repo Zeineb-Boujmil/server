@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Ced.CoC" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BizTalkServiceInstance" targetNamespace="http://Ced.CoC" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <CreationInfo Created="2018-03-22 15:46:08Z" />
+  </wsdl:documentation>
+  <wsp:Policy wsu:Id="WSHttpBinding_ITwoWayAsync_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="true" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/Message" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Message" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="MessageBody">
+        <xs:sequence>
+          <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##any" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://Ced.CoC/Imports" targetNamespace="http://Ced.CoC/Imports" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://Ced.Coc.Integration.Schemas.GetCompanyInformationRequest" />
+      <xs:import namespace="http://Ced.Coc.Integration.Schemas.GetCompanyInformationResponse" />
+    </xs:schema>
+    <xs:schema xmlns="http://Ced.Coc.Integration.Schemas.GetCompanyInformationRequest" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://Ced.Coc.Integration.Schemas.GetCompanyInformationRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="GetCompanyInformationRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CountryCode" type="xs:string" />
+            <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="HouseNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns="http://Ced.Coc.Integration.Schemas.GetCompanyInformationResponse" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://Ced.Coc.Integration.Schemas.GetCompanyInformationResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="GetCompanyInformationResponse">
+        <xs:annotation>
+          <xs:appinfo />
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Success" type="xs:boolean" />
+            <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="Companies" nillable="true">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="CoCNumber" type="xs:string" />
+                        <xs:element name="Name" type="xs:string" />
+                        <xs:element name="Street" type="xs:string" />
+                        <xs:element name="HouseNumber" type="xs:string" />
+                        <xs:element name="PostalCode" type="xs:string" />
+                        <xs:element name="City" type="xs:string" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="WcfService_Ced_Coc_Integration_GetCompanyInformation_InputMessage">
+    <wsdl:part xmlns:q1="http://Ced.Coc.Integration.Schemas.GetCompanyInformationRequest" name="part" element="q1:GetCompanyInformationRequest" />
+  </wsdl:message>
+  <wsdl:message name="WcfService_Ced_Coc_Integration_GetCompanyInformation_OutputMessage">
+    <wsdl:part xmlns:q2="http://Ced.Coc.Integration.Schemas.GetCompanyInformationResponse" name="part" element="q2:GetCompanyInformationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WcfService_Ced_Coc_Integration">
+    <wsdl:documentation>service "*" port "*"</wsdl:documentation>
+    <wsdl:operation name="GetCompanyInformation">
+      <wsdl:documentation>operation "GetCompanyInformation"</wsdl:documentation>
+      <wsdl:input message="tns:WcfService_Ced_Coc_Integration_GetCompanyInformation_InputMessage" />
+      <wsdl:output message="tns:WcfService_Ced_Coc_Integration_GetCompanyInformation_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ITwoWayAsync" type="tns:WcfService_Ced_Coc_Integration">
+    <wsp:PolicyReference URI="#WSHttpBinding_ITwoWayAsync_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCompanyInformation">
+      <wsdl:documentation>operation "GetCompanyInformation"</wsdl:documentation>
+      <soap12:operation soapAction="GetCompanyInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BizTalkServiceInstance">
+    <wsdl:port name="WSHttpBinding_ITwoWayAsync" binding="tns:WSHttpBinding_ITwoWayAsync">
+      <soap12:address location="https://biztalkservices-d.cedcloud.com/MasterData/CoC/WcfService_Ced_Coc_Integration.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://biztalkservices-d.cedcloud.com/MasterData/CoC/WcfService_Ced_Coc_Integration.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
